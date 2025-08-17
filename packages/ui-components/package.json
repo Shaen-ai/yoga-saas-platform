@@ -1,0 +1,27 @@
+{
+  "name": "ui-components",
+  "version": "1.0.0",
+  "description": "Shared UI components for Yoga SaaS Platform",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && rollup -c",
+    "dev": "rollup -c -w",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "@mui/material": "^5.14.0",
+    "@mui/icons-material": "^5.14.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "rollup": "^3.26.0",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@storybook/react": "^7.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "name": "yoga-saas-platform",
+  "version": "1.0.0",
+  "description": "AI-powered personalized yoga plan SaaS platform with Wix integration",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "backend/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:dashboard\" \"npm run dev:api\" \"npm run dev:widget\"",
+    "dev:dashboard": "cd apps/yoga-dashboard && npm start",
+    "dev:api": "cd backend/api && npm run dev",
+    "dev:widget": "cd apps/wix-widget && npm run dev",
+    "build": "npm run build:dashboard && npm run build:widget && npm run build:api",
+    "build:dashboard": "cd apps/yoga-dashboard && npm run build",
+    "build:widget": "cd apps/wix-widget && npm run build",
+    "build:api": "cd backend/api && npm run build",
+    "test": "npm run test:dashboard && npm run test:api",
+    "test:dashboard": "cd apps/yoga-dashboard && npm test",
+    "test:api": "cd backend/api && npm test",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "type-check": "npm run type-check:dashboard && npm run type-check:api",
+    "type-check:dashboard": "cd apps/yoga-dashboard && npm run type-check",
+    "type-check:api": "cd backend/api && npm run type-check",
+    "install:all": "npm install && npm run install:dashboard && npm run install:api && npm run install:widget",
+    "install:dashboard": "cd apps/yoga-dashboard && npm install",
+    "install:api": "cd backend/api && npm install",
+    "install:widget": "cd apps/wix-widget && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "eslint": "^8.45.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0"
+  },
+  "keywords": [
+    "yoga",
+    "saas",
+    "ai",
+    "wix",
+    "fitness",
+    "wellness",
+    "react",
+    "nodejs"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/yoga-saas-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/yoga-saas-platform/issues"
+  },
+  "homepage": "https://github.com/yourusername/yoga-saas-platform#readme"
+}
