@@ -1,0 +1,32 @@
+services:
+  # Just the essentials for development
+  backend:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongodb:27017/yoga_saas
+      - JWT_SECRET=dev-secret-key
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend/api:/app
+      - /app/node_modules
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongodb_data:
